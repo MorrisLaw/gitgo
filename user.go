@@ -68,7 +68,7 @@ func getUsers(name string) User {
 	defer resp.Body.Close()
 
 	// Read the response body and handle any errors during reading.
-	body, err := ioutil.ReadAll(resp, body)
+	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatalf("Error reading data: %s\n", err)
 	}
